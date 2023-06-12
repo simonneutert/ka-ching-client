@@ -6,3 +6,5 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased] - yyyy-mm-dd
+
+- [#1](https://github.com/simonneutert/ka-ching-client/pull/1) fixes entry in Readme after gem release - [simonneutert](https://github.com/simonneutert)
