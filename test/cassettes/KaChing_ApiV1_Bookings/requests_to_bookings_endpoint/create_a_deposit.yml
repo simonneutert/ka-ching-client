@@ -1,0 +1,33 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:9292/ka-ching/api/v1/testuser_1/bookings
+    body:
+      encoding: UTF-8
+      string: '{"action":"deposit","amount_cents":10000,"year":2023,"month":3,"day":23,"context":{"foo":"bar"}}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json
+      vary:
+      - Accept-Encoding
+      content-encoding:
+      - gzip
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":true,"saldo":10000,"record":{"id":"07e37de9-8d09-4262-880a-0becdf81f727","action":"deposit","amount_cents":10000,"realized":"2023-04-09
+        00:00:00 +0100","context":"{\"foo\": \"bar\"}","created_at":"2023-04-09 22:09:46
+        +0100","updated_at":"2023-04-09 22:09:46 +0100"},"context":null}'
+  recorded_at: Sun, 09 Apr 2023 21:09:46 GMT
+recorded_with: VCR 6.1.0

@@ -1,0 +1,17 @@
+[*.rb]
+indent_size = 2
+indent_style = space
+end_of_line = lf
+
+[Gemfile]
+indent_size = 2
+indent_style = space
+end_of_line = lf
+
+[*.md]
+indent_size = 2
+indent_style = space
+end_of_line = lf
+
+[*.yml]
+indent_size = 2

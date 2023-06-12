@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:9292/ka-ching/api/v1/admin/
+    body:
+      encoding: UTF-8
+      string: '{"tenant_account_id":"testuser_1"}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json
+      vary:
+      - Accept-Encoding
+      content-encoding:
+      - gzip
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"api":"V1","health":"success","db":["sequel_constraint_validations","schema_info","bookings","audit_logs","lockings"]}'
+  recorded_at: Sun, 09 Apr 2023 18:35:55 GMT
+- request:
+    method: get
+    uri: http://localhost:9292/ka-ching/api/v1/admin/testuser_1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json
+      vary:
+      - Accept-Encoding
+      content-encoding:
+      - gzip
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"bcfcfb5d-b936-403c-afc3-e9c7ffd8bf37","tenant_db_id":"kaching_tenant_testuser_1","active":true,"current_state":"created","next_state":null,"context":{},"created_at":"2023-04-09
+        20:35:55 +0200","updated_at":"2023-04-09 20:35:55 +0200"}'
+  recorded_at: Sun, 09 Apr 2023 18:35:55 GMT
+recorded_with: VCR 6.1.0

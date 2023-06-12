@@ -1,0 +1,27 @@
+AllCops:
+  TargetRubyVersion: 2.7
+  NewCops: enable
+
+Naming/FileName:
+  Exclude:
+    - "lib/ka-ching-client.rb"
+
+Naming/MemoizedInstanceVariableName:
+  EnforcedStyleForLeadingUnderscores: optional
+
+Metrics/MethodLength:
+  Max: 20
+  CountAsOne: ["array", "hash", "heredoc", "method_call"]
+
+Metrics/ParameterLists:
+  Max: 6
+
+Metrics/BlockLength:
+  Enabled: True
+  Exclude:
+    - "test/**/*"
+
+Metrics/AbcSize:
+  Enabled: false
+  Exclude:
+    - "test/**/*"
