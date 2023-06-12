@@ -1,6 +1,6 @@
 # KaChing::Client<!-- omit from toc -->
 
-KaChing::Client is a Ruby client for the Ka-Ching API.
+KaChing::Client is a Ruby API client for the [KaChing Backend project / simonneutert/ka-ching-backend](https://github.com/simonneutert/ka-ching-backend).
 
 [![Ruby](https://github.com/simonneutert/ka-ching-client/actions/workflows/main.yml/badge.svg)](https://github.com/simonneutert/ka-ching-client/actions/workflows/main.yml)
 
