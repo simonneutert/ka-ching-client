@@ -40,8 +40,6 @@ KaChing::Client is a Ruby API client for the [KaChing Backend project / simonneu
 
 ## Installation
 
-TODO: Replace `ka-ching-client` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
-
 Install the gem and add to the application's Gemfile by executing:
 
     $ bundle add ka-ching-client
