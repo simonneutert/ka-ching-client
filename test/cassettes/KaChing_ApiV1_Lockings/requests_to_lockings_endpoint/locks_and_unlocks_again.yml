@@ -1,71 +1,73 @@
 ---
 http_interactions:
-- request:
-    method: post
-    uri: http://localhost:9292/ka-ching/api/v1/testuser_1/lockings
-    body:
-      encoding: UTF-8
-      string: '{"action":"lock","amount_cents_saldo_user_counted":10000,"year":2023,"month":4,"day":10,"context":{"foo":"bar"}}'
-    headers:
-      User-Agent:
-      - Faraday v2.7.4
-      Content-Type:
-      - application/json
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      content-type:
-      - application/json
-      vary:
-      - Accept-Encoding
-      content-encoding:
-      - gzip
-      transfer-encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: '{"status":true,"saldo":10000,"diff":9000,"record":{"id":1,"saldo_cents_calculated":1000,"amount_cents_saldo_user_counted":10000,"active":true,"realized":"2023-04-10
-        00:00:00 +0200","bookings_json":"[{\"id\": \"a2aa8b0d-28c2-407c-81e1-b2a7eda2b290\",
-        \"action\": \"deposit\", \"context\": \"{\\\"context_1\\\": \\\"some text\\\",
-        \\\"context_2\\\": true}\", \"realized\": \"2022-12-19 00:00:00 +0100\", \"created_at\":
-        \"2023-04-10 12:35:24 +0200\", \"updated_at\": \"2023-04-10 12:35:24 +0200\",
-        \"amount_cents\": 1000}]","context":"\"{\\\"foo\\\":\\\"bar\\\"}\"","created_at":"2023-04-10
-        12:36:15 +0200","updated_at":"2023-04-10 12:36:15 +0200"},"context":"\"{\\\"foo\\\":\\\"bar\\\"}\""}'
-  recorded_at: Mon, 10 Apr 2023 10:36:15 GMT
-- request:
-    method: delete
-    uri: http://localhost:9292/ka-ching/api/v1/testuser_1/lockings
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.7.4
-      Content-Type:
-      - application/json
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      content-type:
-      - application/json
-      vary:
-      - Accept-Encoding
-      content-encoding:
-      - gzip
-      transfer-encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: '{"id":1,"saldo_cents_calculated":1000,"amount_cents_saldo_user_counted":10000,"active":false,"realized":"2023-04-10
-        00:00:00 +0200","bookings_json":"[{\"id\": \"a2aa8b0d-28c2-407c-81e1-b2a7eda2b290\",
-        \"action\": \"deposit\", \"context\": \"{\\\"context_1\\\": \\\"some text\\\",
-        \\\"context_2\\\": true}\", \"realized\": \"2022-12-19 00:00:00 +0100\", \"created_at\":
-        \"2023-04-10 12:35:24 +0200\", \"updated_at\": \"2023-04-10 12:35:24 +0200\",
-        \"amount_cents\": 1000}]","context":"\"{\\\"foo\\\":\\\"bar\\\"}\"","created_at":"2023-04-10
-        12:36:15 +0200","updated_at":"2023-04-10 12:36:15 +0200"}'
-  recorded_at: Mon, 10 Apr 2023 10:36:15 GMT
+  - request:
+      method: post
+      uri: http://localhost:9292/ka-ching/api/v1/testuser_1/lockings
+      body:
+        encoding: UTF-8
+        string: '{"action":"lock","amount_cents_saldo_user_counted":10000,"year":2023,"month":4,"day":10,"context":{"foo":"bar"}}'
+      headers:
+        User-Agent:
+          - Faraday v2.7.4
+        Content-Type:
+          - application/json
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        content-type:
+          - application/json
+        vary:
+          - Accept-Encoding
+        content-encoding:
+          - gzip
+        transfer-encoding:
+          - chunked
+      body:
+        encoding: ASCII-8BIT
+        string:
+          '{"status":true,"saldo":10000,"diff":9000,"record":{"id":1,"saldo_cents_calculated":1000,"amount_cents_saldo_user_counted":10000,"active":true,"realized_at":"2023-04-10
+          00:00:00 +0200","bookings_json":"[{\"id\": \"a2aa8b0d-28c2-407c-81e1-b2a7eda2b290\",
+          \"action\": \"deposit\", \"context\": \"{\\\"context_1\\\": \\\"some text\\\",
+          \\\"context_2\\\": true}\", \"realized_at\": \"2022-12-19 00:00:00 +0100\", \"created_at\":
+          \"2023-04-10 12:35:24 +0200\", \"updated_at\": \"2023-04-10 12:35:24 +0200\",
+          \"amount_cents\": 1000}]","context":"\"{\\\"foo\\\":\\\"bar\\\"}\"","created_at":"2023-04-10
+          12:36:15 +0200","updated_at":"2023-04-10 12:36:15 +0200"},"context":"\"{\\\"foo\\\":\\\"bar\\\"}\""}'
+    recorded_at: Mon, 10 Apr 2023 10:36:15 GMT
+  - request:
+      method: delete
+      uri: http://localhost:9292/ka-ching/api/v1/testuser_1/lockings
+      body:
+        encoding: US-ASCII
+        string: ""
+      headers:
+        User-Agent:
+          - Faraday v2.7.4
+        Content-Type:
+          - application/json
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        content-type:
+          - application/json
+        vary:
+          - Accept-Encoding
+        content-encoding:
+          - gzip
+        transfer-encoding:
+          - chunked
+      body:
+        encoding: ASCII-8BIT
+        string:
+          '{"id":1,"saldo_cents_calculated":1000,"amount_cents_saldo_user_counted":10000,"active":false,"realized_at":"2023-04-10
+          00:00:00 +0200","bookings_json":"[{\"id\": \"a2aa8b0d-28c2-407c-81e1-b2a7eda2b290\",
+          \"action\": \"deposit\", \"context\": \"{\\\"context_1\\\": \\\"some text\\\",
+          \\\"context_2\\\": true}\", \"realized_at\": \"2022-12-19 00:00:00 +0100\", \"created_at\":
+          \"2023-04-10 12:35:24 +0200\", \"updated_at\": \"2023-04-10 12:35:24 +0200\",
+          \"amount_cents\": 1000}]","context":"\"{\\\"foo\\\":\\\"bar\\\"}\"","created_at":"2023-04-10
+          12:36:15 +0200","updated_at":"2023-04-10 12:36:15 +0200"}'
+    recorded_at: Mon, 10 Apr 2023 10:36:15 GMT
 recorded_with: VCR 6.1.0

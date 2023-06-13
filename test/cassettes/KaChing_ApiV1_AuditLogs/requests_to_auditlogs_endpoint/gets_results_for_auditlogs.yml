@@ -1,49 +1,50 @@
 ---
 http_interactions:
-- request:
-    method: get
-    uri: http://localhost:9292/ka-ching/api/v1/testuser_1/auditlogs?year=2023
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.7.4
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      content-type:
-      - application/json
-      vary:
-      - Accept-Encoding
-      content-encoding:
-      - gzip
-      transfer-encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: '{"audit_logs":[{"id":1,"table_referenced":"lockings","environment_snapshot":"{\"id\":
-        1, \"active\": true, \"context\": \"\\\"{\\\\\\\"foo\\\\\\\":\\\\\\\"bar\\\\\\\"}\\\"\",
-        \"realized\": \"2023-04-10 00:00:00 +0200\", \"created_at\": \"2023-04-10
-        12:36:15 +0200\", \"updated_at\": \"2023-04-10 12:36:15 +0200\", \"bookings_json\":
-        \"[{\\\"id\\\": \\\"a2aa8b0d-28c2-407c-81e1-b2a7eda2b290\\\", \\\"action\\\":
-        \\\"deposit\\\", \\\"context\\\": \\\"{\\\\\\\"context_1\\\\\\\": \\\\\\\"some
-        text\\\\\\\", \\\\\\\"context_2\\\\\\\": true}\\\", \\\"realized\\\": \\\"2022-12-19
-        00:00:00 +0100\\\", \\\"created_at\\\": \\\"2023-04-10 12:35:24 +0200\\\",
-        \\\"updated_at\\\": \\\"2023-04-10 12:35:24 +0200\\\", \\\"amount_cents\\\":
-        1000}]\", \"saldo_cents_calculated\": 1000, \"amount_cents_saldo_user_counted\":
-        10000}","log_entry":"{\"id\": 1, \"active\": false, \"context\": \"\\\"{\\\\\\\"foo\\\\\\\":\\\\\\\"bar\\\\\\\"}\\\"\",
-        \"realized\": \"2023-04-10 00:00:00 +0200\", \"created_at\": \"2023-04-10
-        12:36:15 +0200\", \"updated_at\": \"2023-04-10 12:36:15 +0200\", \"bookings_json\":
-        \"[{\\\"id\\\": \\\"a2aa8b0d-28c2-407c-81e1-b2a7eda2b290\\\", \\\"action\\\":
-        \\\"deposit\\\", \\\"context\\\": \\\"{\\\\\\\"context_1\\\\\\\": \\\\\\\"some
-        text\\\\\\\", \\\\\\\"context_2\\\\\\\": true}\\\", \\\"realized\\\": \\\"2022-12-19
-        00:00:00 +0100\\\", \\\"created_at\\\": \\\"2023-04-10 12:35:24 +0200\\\",
-        \\\"updated_at\\\": \\\"2023-04-10 12:35:24 +0200\\\", \\\"amount_cents\\\":
-        1000}]\", \"saldo_cents_calculated\": 1000, \"amount_cents_saldo_user_counted\":
-        10000}","created_at":"2023-04-10 12:36:15 +0200","updated_at":"2023-04-10
-        12:36:15 +0200"}]}'
-  recorded_at: Mon, 10 Apr 2023 10:46:28 GMT
+  - request:
+      method: get
+      uri: http://localhost:9292/ka-ching/api/v1/testuser_1/auditlogs?year=2023
+      body:
+        encoding: US-ASCII
+        string: ""
+      headers:
+        User-Agent:
+          - Faraday v2.7.4
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        content-type:
+          - application/json
+        vary:
+          - Accept-Encoding
+        content-encoding:
+          - gzip
+        transfer-encoding:
+          - chunked
+      body:
+        encoding: ASCII-8BIT
+        string:
+          '{"audit_logs":[{"id":1,"table_referenced":"lockings","environment_snapshot":"{\"id\":
+          1, \"active\": true, \"context\": \"\\\"{\\\\\\\"foo\\\\\\\":\\\\\\\"bar\\\\\\\"}\\\"\",
+          \"realized_at\": \"2023-04-10 00:00:00 +0200\", \"created_at\": \"2023-04-10
+          12:36:15 +0200\", \"updated_at\": \"2023-04-10 12:36:15 +0200\", \"bookings_json\":
+          \"[{\\\"id\\\": \\\"a2aa8b0d-28c2-407c-81e1-b2a7eda2b290\\\", \\\"action\\\":
+          \\\"deposit\\\", \\\"context\\\": \\\"{\\\\\\\"context_1\\\\\\\": \\\\\\\"some
+          text\\\\\\\", \\\\\\\"context_2\\\\\\\": true}\\\", \\\"realized_at\\\": \\\"2022-12-19
+          00:00:00 +0100\\\", \\\"created_at\\\": \\\"2023-04-10 12:35:24 +0200\\\",
+          \\\"updated_at\\\": \\\"2023-04-10 12:35:24 +0200\\\", \\\"amount_cents\\\":
+          1000}]\", \"saldo_cents_calculated\": 1000, \"amount_cents_saldo_user_counted\":
+          10000}","log_entry":"{\"id\": 1, \"active\": false, \"context\": \"\\\"{\\\\\\\"foo\\\\\\\":\\\\\\\"bar\\\\\\\"}\\\"\",
+          \"realized_at\": \"2023-04-10 00:00:00 +0200\", \"created_at\": \"2023-04-10
+          12:36:15 +0200\", \"updated_at\": \"2023-04-10 12:36:15 +0200\", \"bookings_json\":
+          \"[{\\\"id\\\": \\\"a2aa8b0d-28c2-407c-81e1-b2a7eda2b290\\\", \\\"action\\\":
+          \\\"deposit\\\", \\\"context\\\": \\\"{\\\\\\\"context_1\\\\\\\": \\\\\\\"some
+          text\\\\\\\", \\\\\\\"context_2\\\\\\\": true}\\\", \\\"realized_at\\\": \\\"2022-12-19
+          00:00:00 +0100\\\", \\\"created_at\\\": \\\"2023-04-10 12:35:24 +0200\\\",
+          \\\"updated_at\\\": \\\"2023-04-10 12:35:24 +0200\\\", \\\"amount_cents\\\":
+          1000}]\", \"saldo_cents_calculated\": 1000, \"amount_cents_saldo_user_counted\":
+          10000}","created_at":"2023-04-10 12:36:15 +0200","updated_at":"2023-04-10
+          12:36:15 +0200"}]}'
+    recorded_at: Mon, 10 Apr 2023 10:46:28 GMT
 recorded_with: VCR 6.1.0
