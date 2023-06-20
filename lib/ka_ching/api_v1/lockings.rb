@@ -96,7 +96,7 @@ module KaChing
 
       def active(tenant_account_id:, year: nil, page: 1, per_page: 100)
         params = { page: page, per_page: per_page }
-        body_params = { active: true }
+        body_params = { active: 'true' }
         body_params.merge!({ year: year }) if year
         res = get(build_url(tenant_account_id: tenant_account_id), params) do |req|
           req.headers['Content-Type'] = 'application/json'
@@ -108,7 +108,7 @@ module KaChing
 
       def inactive(tenant_account_id:, year: nil, page: 1, per_page: 100)
         params = { page: page, per_page: per_page }
-        body_params = { inactive: true }
+        body_params = { inactive: 'true' }
         body_params.merge!({ year: year }) if year
         res = get(build_url(tenant_account_id: tenant_account_id), params) do |req|
           req.headers['Content-Type'] = 'application/json'
