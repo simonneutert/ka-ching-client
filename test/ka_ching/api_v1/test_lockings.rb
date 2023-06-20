@@ -108,6 +108,34 @@ describe 'KaChing::ApiV1::Lockings', :vcr do
                       prev_page].sort, res_lock.keys.sort)
       assert(res_lock['items'].is_a?(Array))
       assert(res_lock['items'].first.is_a?(Hash))
+      assert(res_lock['items'].all? { |item| item['active'] == true })
+    end
+    it 'loads inactive lockings' do
+      http_res_lock = nil
+      res_lock = @client.v1
+                        .lockings
+                        .inactive(tenant_account_id: 'testuser_1',
+                                  page: 1,
+                                  per_page: 10) do |response|
+        http_res_lock = response
+      end
+      assert_equal 200, http_res_lock.status
+      res_lock.is_a?(Hash)
+      assert_equal(%w[current_page
+                      current_page_record_count
+                      current_page_record_range
+                      first_page
+                      items
+                      last_page
+                      next_page
+                      page_count
+                      page_range
+                      page_size
+                      pagination_record_count
+                      prev_page].sort, res_lock.keys.sort)
+      assert(res_lock['items'].is_a?(Array))
+      assert(res_lock['items'].first.is_a?(Hash))
+      assert(res_lock['items'].all? { |item| item['active'] == false })
     end
   end
 end
