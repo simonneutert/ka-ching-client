@@ -94,33 +94,25 @@ module KaChing
         JSON.parse(res.body)
       end
 
-      #
-      # Get all lockings for a given year in month
-      #
-      # @yield [Faraday::Response] The response from the server
-      # @return [Hash]
-      #
-      def of_year_month(tenant_account_id:, year:, month:, page: 1, per_page: 100)
-        res = get(build_url(tenant_account_id: tenant_account_id),
-                  { year: year, month: month, page: page, per_page: per_page }) do |req|
+      def active(tenant_account_id:, year: nil, page: 1, per_page: 100)
+        params = { page: page, per_page: per_page }
+        body_params = { active: true }
+        body_params.merge!({ year: year }) if year
+        res = get(build_url(tenant_account_id: tenant_account_id), params) do |req|
           req.headers['Content-Type'] = 'application/json'
-          req.body = { year: year, month: month }.to_json
+          req.body = body_params.to_json
         end
         yield res if block_given?
         JSON.parse(res.body)
       end
 
-      #
-      # Get all lockings for a given year in month at day
-      #
-      # @yield [Faraday::Response] The response from the server
-      # @return [Hash]
-      #
-      def of_year_month_day(tenant_account_id:, year:, month:, day:)
-        res = get(build_url(tenant_account_id: tenant_account_id).to_s,
-                  { year: year, month: month, day: day, page: page, per_page: per_page }) do |req|
+      def inactive(tenant_account_id:, year: nil, page: 1, per_page: 100)
+        params = { page: page, per_page: per_page }
+        body_params = { inactive: true }
+        body_params.merge!({ year: year }) if year
+        res = get(build_url(tenant_account_id: tenant_account_id), params) do |req|
           req.headers['Content-Type'] = 'application/json'
-          req.body = { year: year, month: month, day: day }.to_json
+          req.body = body_params.to_json
         end
         yield res if block_given?
         JSON.parse(res.body)
