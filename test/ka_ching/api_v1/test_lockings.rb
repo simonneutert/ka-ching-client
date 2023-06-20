@@ -33,7 +33,7 @@ describe 'KaChing::ApiV1::Lockings', :vcr do
                       context
                       created_at
                       id
-                      realized
+                      realized_at
                       saldo_cents_calculated
                       amount_cents_saldo_user_counted
                       updated_at].sort, res_lock_record.keys.sort
@@ -52,7 +52,7 @@ describe 'KaChing::ApiV1::Lockings', :vcr do
                       context
                       created_at
                       id
-                      realized
+                      realized_at
                       saldo_cents_calculated
                       amount_cents_saldo_user_counted
                       updated_at].sort, res_unlock.keys.sort
