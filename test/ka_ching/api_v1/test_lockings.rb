@@ -88,6 +88,7 @@ describe 'KaChing::ApiV1::Lockings', :vcr do
       res_lock = @client.v1
                         .lockings
                         .active(tenant_account_id: 'testuser_1',
+                                year: 2023,
                                 page: 1,
                                 per_page: 10) do |response|
         http_res_lock = response
@@ -115,6 +116,7 @@ describe 'KaChing::ApiV1::Lockings', :vcr do
       res_lock = @client.v1
                         .lockings
                         .inactive(tenant_account_id: 'testuser_1',
+                                  year: 2023,
                                   page: 1,
                                   per_page: 10) do |response|
         http_res_lock = response
