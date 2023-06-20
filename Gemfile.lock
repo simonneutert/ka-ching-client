@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ka-ching-client (0.1.0)
+    ka-ching-client (0.2.0)
       faraday (~> 2.7.4)
       httpx (>= 0.22.4, < 0.25.0)
 
@@ -33,6 +33,7 @@ GEM
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
     method_source (1.0.0)
+    mini_portile2 (2.8.2)
     minispec-metadata (2.0.0)
       minitest
     minitest (5.18.1)
@@ -40,6 +41,9 @@ GEM
       minispec-metadata (~> 2.0)
       minitest (>= 4.7.5)
       vcr (>= 2.9)
+    nokogiri (1.15.2)
+      mini_portile2 (~> 2.8.2)
+      racc (~> 1.4)
     nokogiri (1.15.2-arm64-darwin)
       racc (~> 1.4)
     nokogiri (1.15.2-x86_64-linux)
@@ -107,6 +111,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-22
+  ruby
   x86_64-linux
 
 DEPENDENCIES

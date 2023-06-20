@@ -20,16 +20,16 @@ KaChing::Client is a Ruby API client for the [KaChing Backend project / simonneu
     - [unlock!](#unlock)
     - [all paginated](#all-paginated)
     - [of\_year](#of_year)
-    - [of\_year\_month](#of_year_month)
-    - [of\_year\_month\_day](#of_year_month_day)
-  - [AuditLogs](#auditlogs)
-    - [of\_year](#of_year-1)
-    - [of\_year\_month](#of_year_month-1)
-    - [of\_year\_month\_day](#of_year_month_day-1)
-  - [Tenants](#tenants)
-    - [all](#all)
     - [active](#active)
     - [inactive](#inactive)
+  - [AuditLogs](#auditlogs)
+    - [of\_year](#of_year-1)
+    - [of\_year\_month](#of_year_month)
+    - [of\_year\_month\_day](#of_year_month_day)
+  - [Tenants](#tenants)
+    - [all](#all)
+    - [active](#active-1)
+    - [inactive](#inactive-1)
   - [Admin](#admin)
     - [details](#details)
     - [create!](#create)
@@ -187,7 +187,7 @@ Get all lockings for a tenant paginated.
 res = client.v1.lockings.all(
   tenant_account_id: 'testuser_1',
   page: 1,
-  per_page: 10
+  per_page: 10,
 )
 ```
 
@@ -199,28 +199,25 @@ Get lockings for a tenant by year.
 res = client.v1.lockings.of_year(tenant_account_id: 'testuser_1', year: 2019)
 ```
 
-#### of_year_month
+#### active
 
-Get lockings for a tenant by year and month.
+Get active lockings for a tenant (by year).
 
 ```ruby
-res = client.v1.lockings.of_year(
+res = client.v1.lockings.active(
   tenant_account_id: 'testuser_1',
-  year: 2019,
-  month: 11
+  year: nil || 2019,
 )
 ```
 
-#### of_year_month_day
+#### inactive
 
-Get lockings for a tenant by year, month and day.
+Get inactive lockings for a tenant (by year).
 
 ```ruby
-res = client.v1.lockings.of_year(
+res = client.v1.lockings.inactive(
   tenant_account_id: 'testuser_1',
-  year: 2019,
-  month: 11,
-  day: 21
+  year: nil || 2019,
 )
 ```
 
