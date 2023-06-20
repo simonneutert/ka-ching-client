@@ -201,23 +201,23 @@ res = client.v1.lockings.of_year(tenant_account_id: 'testuser_1', year: 2019)
 
 #### active
 
-Get active lockings for a tenant (by year).
+Get active lockings for a tenant for a year.
 
 ```ruby
 res = client.v1.lockings.active(
   tenant_account_id: 'testuser_1',
-  year: nil || 2019,
+  year: 2019,
 )
 ```
 
 #### inactive
 
-Get inactive lockings for a tenant (by year).
+Get inactive lockings for a tenant for a year.
 
 ```ruby
 res = client.v1.lockings.inactive(
   tenant_account_id: 'testuser_1',
-  year: nil || 2019,
+  year: 2019,
 )
 ```
 
