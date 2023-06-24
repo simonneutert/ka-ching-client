@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:9292/ka-ching/api/v1/admin/
+    body:
+      encoding: UTF-8
+      string: '{"tenant_account_id":"testuser_123"}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.7
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json
+      vary:
+      - Accept-Encoding
+      content-encoding:
+      - gzip
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"api":"V1","health":"success","db":["sequel_constraint_validations","schema_info","bookings","audit_logs","lockings"]}'
+  recorded_at: Sat, 24 Jun 2023 07:59:58 GMT
+- request:
+    method: post
+    uri: http://localhost:9292/ka-ching/api/v1/admin/testuser_123/reset
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.7
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json
+      vary:
+      - Accept-Encoding
+      content-encoding:
+      - gzip
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"api":"V1","health":"success","db":["sequel_constraint_validations","schema_info","bookings","audit_logs","lockings"]}'
+  recorded_at: Sat, 24 Jun 2023 08:00:01 GMT
+recorded_with: VCR 6.1.0

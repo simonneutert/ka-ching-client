@@ -34,6 +34,7 @@ KaChing::Client is a Ruby API client for the [KaChing Backend project / simonneu
     - [details](#details)
     - [create!](#create)
     - [drop!](#drop-1)
+    - [reset!](#reset)
 - [Development](#development)
 - [Contributing](#contributing)
 - [License](#license)
@@ -267,7 +268,7 @@ All tenants related endpoints.
 Get all tenants paginated.
 
 ```ruby
-res = client.v1.tenants.all(page: 1)
+res = client.v1.tenants.all(page: 1, per_page: 1000)
 ```
 
 #### active
@@ -275,7 +276,7 @@ res = client.v1.tenants.all(page: 1)
 Get all active tenants paginated.
 
 ```ruby
-res = client.v1.tenants.active(page: 1)
+res = client.v1.tenants.active(page: 1, per_page: 1000)
 ```
 
 #### inactive
@@ -283,7 +284,7 @@ res = client.v1.tenants.active(page: 1)
 Get all inactive tenants paginated.
 
 ```ruby
-res = client.v1.tenants.inactive(page: 1)
+res = client.v1.tenants.inactive(page: 1, per_page: 1000)
 ```
 
 ### Admin
@@ -312,6 +313,14 @@ Drop/Delete a tenant database.
 
 ```ruby
 res = client.v1.admin.drop!(tenant_account_id: 'testuser_1')
+```
+
+#### reset!
+
+Reset a tenant database.
+
+```ruby
+res = client.v1.admin.reset!(tenant_account_id: 'testuser_1')
 ```
 
 ## Development
