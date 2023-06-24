@@ -12,6 +12,27 @@ describe 'KaChing::ApiV1::Tenants', :vcr do
   end
 
   describe 'requests to tenants endpoint' do
+    it 'resets a tenant database' do
+      http = nil
+      res = @client.v1.admin.create!(tenant_account_id: 'testuser_123') do |response|
+        http = response
+      end
+      assert_equal 200, http.status
+      assert res.is_a?(Hash)
+
+      http = nil
+      res = @client.v1.admin.reset!(tenant_account_id: 'testuser_123') do |response|
+        http = response
+      end
+      assert_equal 200, http.status
+      assert res.is_a?(Hash)
+      assert_equal %w[api db health].sort, res.keys.sort
+      assert_equal 'success', res['health']
+      assert_equal 'V1', res['api']
+      assert_equal %w[sequel_constraint_validations schema_info bookings audit_logs lockings].sort,
+                   res['db'].sort
+    end
+
     it 'paginates over tenant databases' do
       http = nil
       res = @client.v1.admin.create!(tenant_account_id: 'testuser_123') do |response|
@@ -66,10 +87,10 @@ describe 'KaChing::ApiV1::Tenants', :vcr do
 
       assert_equal 1, res['page_count']
       assert_equal 1, res['current_page']
-      assert_equal 6, res['pagination_record_count']
-      assert_equal 6, res['current_page_record_count']
+      assert_equal 3, res['pagination_record_count']
+      assert_equal 3, res['current_page_record_count']
       assert_equal '1..1', res['page_range']
-      assert_equal '1..6', res['current_page_record_range']
+      assert_equal '1..3', res['current_page_record_range']
       assert res['first_page']
       assert res['last_page']
       assert_nil res['next_page']

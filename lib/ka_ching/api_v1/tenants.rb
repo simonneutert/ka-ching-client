@@ -22,10 +22,11 @@ module KaChing
       #
       # @return [Array<Hash>] An array of tenant detail hashes
       #
-      def all(page: 1)
+      def all(page: 1, per_page: 1000)
         all_url = build_url
-        res = get("#{all_url}/all/#{page}") do |req|
+        res = get("#{all_url}/all") do |req|
           req.headers['Content-Type'] = 'application/json'
+          req.body = { page: page, per_page: per_page }.to_json
         end
         yield res if block_given?
         JSON.parse(res.body)
@@ -40,8 +41,9 @@ module KaChing
       #
       def active(page: 1)
         active_url = build_url
-        res = get("#{active_url}/active/#{page}}") do |req|
+        res = get("#{active_url}/active") do |req|
           req.headers['Content-Type'] = 'application/json'
+          req.body = { page: page, per_page: per_page }.to_json
         end
         yield res if block_given?
         JSON.parse(res.body)
@@ -56,8 +58,9 @@ module KaChing
       #
       def inactive(page: 1)
         inactive_url = build_url
-        res = get("#{inactive_url}/all/#{page}}") do |req|
+        res = get("#{inactive_url}/inactive}") do |req|
           req.headers['Content-Type'] = 'application/json'
+          req.body = { page: page, per_page: per_page }.to_json
         end
         yield res if block_given?
         JSON.parse(res.body)
@@ -65,8 +68,12 @@ module KaChing
 
       private
 
-      def build_url
-        "#{@api_url}/tenants"
+      def build_url(tenant_account_id: nil)
+        if tenant_account_id
+          "#{@api_url}/tenants/#{tenant_account_id}"
+        else
+          "#{@api_url}/tenants"
+        end
       end
     end
   end

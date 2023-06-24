@@ -51,6 +51,22 @@ module KaChing
       end
 
       #
+      # resets a tenant database
+      #
+      # @param [String] tenant_account_id without its database namespace
+      #
+      # @return [Hash] containing the details of the response
+      #
+      def reset!(tenant_account_id:)
+        reset_url = "#{build_url(tenant_account_id: tenant_account_id)}/reset"
+        res = post(reset_url) do |req|
+          req.headers['Content-Type'] = 'application/json'
+        end
+        yield res if block_given?
+        JSON.parse(res.body)
+      end
+
+      #
       # drops a tenant database
       #
       # @param [String] tenant_account_id without its database namespace,
