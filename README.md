@@ -4,6 +4,10 @@ KaChing::Client is a Ruby API client for the [KaChing Backend project / simonneu
 
 [![Ruby](https://github.com/simonneutert/ka-ching-client/actions/workflows/main.yml/badge.svg)](https://github.com/simonneutert/ka-ching-client/actions/workflows/main.yml)
 
+The client is supposed to work with the corresponding backend version. As long as it is `0.x.y` the minor (x in this case) must match. 
+
+---
+
 - [Installation](#installation)
 - [Usage (API V1)](#usage-api-v1)
   - [Setup the client](#setup-the-client)
