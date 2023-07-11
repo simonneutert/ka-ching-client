@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [next] - unreleased
 
+- [#19](https://github.com/simonneutert/ka-ching-client/pull/19) upgrades dependencies - [@simonneutert](https://github.com/simonneutert).
 - [#<PRNUMBER>](https://github.com/simonneutert/ka-ching-client/pull/<PRNUMBER>) description - [@<username>](https://github.com/<username>).
 
 ## [0.4.0] - 2023-07-11
