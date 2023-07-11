@@ -47,8 +47,7 @@ module KaChing
           req.body = locking.to_json
         end
         yield res if block_given?
-        res = JSON.parse(res.body)
-        res
+        JSON.parse(res.body)
       end
 
       #
@@ -62,8 +61,7 @@ module KaChing
           req.headers['Content-Type'] = 'application/json'
         end
         yield res if block_given?
-        res = JSON.parse(res.body)
-        res
+        JSON.parse(res.body)
       end
 
       def all(tenant_account_id:, page: 1, per_page: 10)
