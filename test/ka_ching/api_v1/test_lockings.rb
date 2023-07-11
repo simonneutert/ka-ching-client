@@ -8,12 +8,48 @@ describe 'KaChing::ApiV1::Lockings', :vcr do
   end
 
   describe 'requests to lockings endpoint' do
+    it 'locks' do
+      http_res_lock = nil
+      res_lock = @client.v1
+                        .lockings
+                        .lock!(tenant_account_id: 'testuser_1',
+                               amount_cents_saldo_user_counted: 100_00,
+                               context: { 'foo' => 'bar' },
+                               year: 2000,
+                               month: 1,
+                               day: 1) do |response|
+                                 http_res_lock = response
+                               end
+      assert_equal 200, http_res_lock.status
+      res_lock.is_a?(Hash)
+
+      assert_equal %w[context
+                      diff
+                      record
+                      saldo
+                      status], res_lock.keys.sort
+
+      res_lock_record = res_lock['record']
+      assert res_lock_record.is_a?(Hash)
+      assert_equal %w[active
+                      bookings
+                      context
+                      created_at
+                      id
+                      realized_at
+                      saldo_cents_calculated
+                      amount_cents_saldo_user_counted
+                      updated_at].sort, res_lock_record.keys.sort
+    end
     it 'locks and unlocks again' do
       http_res_lock = nil
       res_lock = @client.v1
                         .lockings
                         .lock!(tenant_account_id: 'testuser_1',
                                amount_cents_saldo_user_counted: 100_00,
+                               year: 2000,
+                               month: 1,
+                               day: 31,
                                context: { 'foo' => 'bar' }) do |response|
                                  http_res_lock = response
                                end
@@ -29,7 +65,7 @@ describe 'KaChing::ApiV1::Lockings', :vcr do
       res_lock_record = res_lock['record']
       assert res_lock_record.is_a?(Hash)
       assert_equal %w[active
-                      bookings_json
+                      bookings
                       context
                       created_at
                       id
@@ -48,7 +84,7 @@ describe 'KaChing::ApiV1::Lockings', :vcr do
       res_unlock.is_a?(Hash)
 
       assert_equal %w[active
-                      bookings_json
+                      bookings
                       context
                       created_at
                       id
@@ -88,7 +124,7 @@ describe 'KaChing::ApiV1::Lockings', :vcr do
       res_lock = @client.v1
                         .lockings
                         .active(tenant_account_id: 'testuser_1',
-                                year: 2023,
+                                year: 2000,
                                 page: 1,
                                 per_page: 10) do |response|
         http_res_lock = response
@@ -109,6 +145,7 @@ describe 'KaChing::ApiV1::Lockings', :vcr do
                       prev_page].sort, res_lock.keys.sort)
       assert(res_lock['items'].is_a?(Array))
       assert(res_lock['items'].first.is_a?(Hash))
+      assert(res_lock['items'].first['context'].is_a?(Hash))
       assert(res_lock['items'].all? { |item| item['active'] == true })
     end
     it 'loads inactive lockings' do
@@ -116,7 +153,7 @@ describe 'KaChing::ApiV1::Lockings', :vcr do
       res_lock = @client.v1
                         .lockings
                         .inactive(tenant_account_id: 'testuser_1',
-                                  year: 2023,
+                                  year: 2000,
                                   page: 1,
                                   per_page: 10) do |response|
         http_res_lock = response
@@ -137,6 +174,8 @@ describe 'KaChing::ApiV1::Lockings', :vcr do
                       prev_page].sort, res_lock.keys.sort)
       assert(res_lock['items'].is_a?(Array))
       assert(res_lock['items'].first.is_a?(Hash))
+      assert(res_lock['items'].first['bookings'].first['context'].is_a?(Hash))
+      assert(res_lock['items'].first['context'].is_a?(Hash))
       assert(res_lock['items'].all? { |item| item['active'] == false })
     end
   end

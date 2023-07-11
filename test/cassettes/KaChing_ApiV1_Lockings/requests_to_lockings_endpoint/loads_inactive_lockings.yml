@@ -5,10 +5,10 @@ http_interactions:
     uri: http://localhost:9292/ka-ching/api/v1/testuser_1/lockings?page=1&per_page=10
     body:
       encoding: UTF-8
-      string: '{"inactive":"true","year":2023}'
+      string: '{"inactive":"true","year":2000}'
     headers:
       User-Agent:
-      - Faraday v2.7.6
+      - Faraday v2.7.5
       Content-Type:
       - application/json
   response:
@@ -26,8 +26,10 @@ http_interactions:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"current_page":1,"current_page_record_count":1,"current_page_record_range":"1..1","first_page":true,"last_page":true,"next_page":null,"page_count":1,"page_range":"1..1","page_size":10,"pagination_record_count":1,"prev_page":null,"items":[{"id":1,"saldo_cents_calculated":0,"amount_cents_saldo_user_counted":123,"active":false,"realized_at":"2023-08-25
-        00:00:00 +0200","bookings_json":"[]","context":"\"{}\"","created_at":"2023-06-20
-        22:06:12 +0200","updated_at":"2023-06-20 22:06:12 +0200"}]}'
-  recorded_at: Tue, 20 Jun 2023 20:23:39 GMT
+      string: '{"current_page":1,"current_page_record_count":1,"current_page_record_range":"1..1","first_page":true,"last_page":true,"next_page":null,"page_count":1,"page_range":"1..1","page_size":10,"pagination_record_count":1,"prev_page":null,"items":[{"id":2,"saldo_cents_calculated":20000,"amount_cents_saldo_user_counted":10000,"active":false,"realized_at":"2000-01-31
+        00:00:00 +0100","bookings":[{"id":"b8c243fb-a66e-41ee-beb2-295eab542e29","action":"deposit","context":{"foo":"bar"},"created_at":"2023-07-11
+        20:55:13 +0200","updated_at":"2023-07-11 20:55:13 +0200","realized_at":"2000-01-11
+        00:00:00 +0100","amount_cents":10000}],"context":{"foo":"bar"},"created_at":"2023-07-11
+        20:56:18 +0200","updated_at":"2023-07-11 20:56:18 +0200"}]}'
+  recorded_at: Tue, 11 Jul 2023 18:56:28 GMT
 recorded_with: VCR 6.1.0

@@ -24,15 +24,34 @@ describe 'KaChing::ApiV1::AuditLogs', :vcr do
       assert environment_snapshot['bookings'].is_a?(Array)
       assert environment_snapshot['bookings'].first.is_a?(Hash)
       assert environment_snapshot['context'].is_a?(Hash)
-      assert((%w[action amount_cents context created_at id realized_at
-                 updated_at] - environment_snapshot['bookings'].first.keys).empty?)
+      assert(
+        (%w[
+          action
+          amount_cents
+          context
+          created_at
+          id
+          realized_at
+          updated_at
+        ].sort - environment_snapshot['bookings'].first.keys.sort).empty?
+      )
 
       log_entry = audit_log['log_entry']
       assert log_entry.is_a?(Hash)
       assert log_entry['bookings'].is_a?(Array)
       assert log_entry['bookings'].first.is_a?(Hash)
-      assert((%w[action amount_cents context created_at id realized_at
-                 updated_at] - log_entry['bookings'].first.keys).empty?)
+      assert(
+        (%w[
+          action
+          amount_cents
+          context
+          created_at
+          id
+          realized_at
+          updated_at
+        ].sort - log_entry['bookings'].first.keys.sort
+        ).empty?
+      )
       assert log_entry['context'].is_a?(Hash)
     end
   end

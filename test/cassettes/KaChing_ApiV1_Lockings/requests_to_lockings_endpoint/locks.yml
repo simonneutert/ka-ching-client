@@ -1,0 +1,33 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:9292/ka-ching/api/v1/testuser_1/lockings
+    body:
+      encoding: UTF-8
+      string: '{"action":"lock","amount_cents_saldo_user_counted":10000,"year":2000,"month":1,"day":1,"context":{"foo":"bar"}}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.5
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json
+      vary:
+      - Accept-Encoding
+      content-encoding:
+      - gzip
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":true,"saldo":10000,"diff":10000,"record":{"id":1,"saldo_cents_calculated":0,"amount_cents_saldo_user_counted":10000,"active":true,"realized_at":"2000-01-01
+        00:00:00 +0100","bookings":[],"context":{"foo":"bar"},"created_at":"2023-07-11
+        20:55:50 +0200","updated_at":"2023-07-11 20:55:50 +0200"},"context":{"foo":"bar"}}'
+  recorded_at: Tue, 11 Jul 2023 18:55:51 GMT
+recorded_with: VCR 6.1.0
