@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [next] - yyyy-mm-dd
 
+- [#18](https://github.com/simonneutert/ka-ching-client/pull/18) implements a much simpler json interaction all the way for every endpoint - [@simonneutert](https://github.com/simonneutert).
 - [#<PRNUMBER>](https://github.com/simonneutert/ka-ching-client/pull/<PRNUMBER>) description - [@<username>](https://github.com/<username>).
 
 ## [0.3.0] - 2023-06-27
