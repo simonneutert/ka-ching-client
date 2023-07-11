@@ -10,6 +10,14 @@ describe 'KaChing::ApiV1::Bookings', :vcr do
   describe 'requests to bookings endpoint' do
     it 'create a deposit' do
       http = nil
+      @client.v1.bookings.deposit!(
+        tenant_account_id: 'testuser_1',
+        amount_cents: 100_00,
+        context: { 'foo' => 'bar' },
+        year: 2000,
+        month: 1,
+        day: 11
+      )
       res = @client.v1.bookings.deposit!(
         tenant_account_id: 'testuser_1',
         amount_cents: 100_00,
@@ -28,13 +36,16 @@ describe 'KaChing::ApiV1::Bookings', :vcr do
       end
       assert_equal 200, http.status
       assert res.is_a?(Hash)
+      assert res['bookings'].is_a?(Array)
+      assert res['bookings'].first.is_a?(Hash)
+      assert res['bookings'].first['context'].is_a?(Hash)
     end
 
     it 'creates a withdrawal' do
       http = nil
       res = @client.v1.bookings.withdraw!(
         tenant_account_id: 'testuser_1',
-        amount_cents: 100_00,
+        amount_cents: 50_00,
         context: { 'foo' => 'bar' }
       ) do |response|
         http = response

@@ -29,7 +29,7 @@ module KaChing
                   { year: year })
 
         yield res if block_given?
-        parse_bookings(JSON.parse(res.body))['audit_logs']
+        JSON.parse(res.body)['audit_logs']
       end
 
       #
@@ -46,7 +46,7 @@ module KaChing
         res = get(build_url(tenant_account_id: tenant_account_id),
                   { year: year, month: month })
         yield res if block_given?
-        parse_bookings(JSON.parse(res.body))['audit_logs']
+        JSON.parse(res.body)['audit_logs']
       end
 
       #
@@ -64,30 +64,10 @@ module KaChing
         res = get(build_url(tenant_account_id: tenant_account_id),
                   { year: year, month: month, day: day })
         yield res if block_given?
-        parse_bookings(JSON.parse(res.body))['audit_logs']
+        JSON.parse(res.body)['audit_logs']
       end
 
       private
-
-      def parse_bookings(audit_log_json)
-        audit_log_json['audit_logs'].map! do |audit_log|
-          parse_booking(audit_log, 'environment_snapshot')
-          parse_booking(audit_log, 'log_entry')
-          audit_log
-        end
-        audit_log_json
-      end
-
-      def parse_booking(audit_log, bookings_key)
-        audit_log[bookings_key] = JSON.parse(audit_log[bookings_key])
-        audit_log[bookings_key]['context'] = JSON.parse(JSON.parse(audit_log[bookings_key]['context']))
-        audit_log[bookings_key]['bookings'] = JSON.parse(audit_log[bookings_key]['bookings_json'])
-        audit_log[bookings_key]['bookings'].map! do |b|
-          b['context'] = JSON.parse(b['context'])
-          b
-        end
-        audit_log
-      end
 
       #
       # build the url for the bookings endpoint

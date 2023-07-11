@@ -48,8 +48,6 @@ module KaChing
         end
         yield res if block_given?
         res = JSON.parse(res.body)
-        res['record']['bookings_json'] = JSON.parse(res['record']['bookings_json'])
-        res['context'] = JSON.parse(JSON.parse(res['context']))
         res
       end
 
@@ -65,8 +63,6 @@ module KaChing
         end
         yield res if block_given?
         res = JSON.parse(res.body)
-        res['bookings_json'] = JSON.parse(res['bookings_json'])
-        res['context'] = JSON.parse(JSON.parse(res['context']))
         res
       end
 
