@@ -7,7 +7,6 @@ require 'ka-ching-client'
 
 require 'minitest/autorun'
 require 'vcr'
-require 'minitest-vcr'
 require 'webmock'
 
 VCR.configure do |c|
@@ -16,5 +15,3 @@ VCR.configure do |c|
   # c.filter_sensitive_data('<USER>') { ENV['HTTP_AUTH_USER'] }
   # c.filter_sensitive_data('<PASSWORD>') { ENV['HTTP_AUTH_PASSWORD'] }
 end
-
-MinitestVcr::Spec.configure!

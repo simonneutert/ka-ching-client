@@ -5,6 +5,11 @@ require 'test_helper'
 describe 'KaChing::ApiV1::Saldo', :vcr do
   before do
     @client = KaChing::ApiClient.new.build_client!
+    VCR.insert_cassette name
+  end
+
+  after do
+    VCR.eject_cassette
   end
 
   describe 'requests to saldo endpoint' do

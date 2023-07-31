@@ -2,9 +2,14 @@
 
 require 'test_helper'
 
-describe 'KaChing::ApiV1::Admin', :vcr do
+describe 'KaChing::ApiV1::Admin' do
   before do
     @client = KaChing::ApiClient.new.build_client!
+    VCR.insert_cassette name
+  end
+
+  after do
+    VCR.eject_cassette
   end
 
   describe 'requests to admin endpoint' do
