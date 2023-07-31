@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gemspec
 
 group :development, :test do
-  gem 'minitest', '~> 5.18'
+  gem 'minitest', '~> 5.19'
   gem 'minitest-vcr', '~> 1.4'
   gem 'pry', '~> 0.14.2'
   gem 'rake', '~> 13.0'

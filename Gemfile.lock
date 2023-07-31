@@ -37,7 +37,7 @@ GEM
     mini_portile2 (2.8.2)
     minispec-metadata (2.0.0)
       minitest
-    minitest (5.18.1)
+    minitest (5.19.0)
     minitest-vcr (1.4.0)
       minispec-metadata (~> 2.0)
       minitest (>= 4.7.5)
@@ -118,7 +118,7 @@ PLATFORMS
 
 DEPENDENCIES
   ka-ching-client!
-  minitest (~> 5.18)
+  minitest (~> 5.19)
   minitest-vcr (~> 1.4)
   pry (~> 0.14.2)
   rake (~> 13.0)
