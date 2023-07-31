@@ -9,6 +9,11 @@ describe 'KaChing::ApiV1::Tenants', :vcr do
     end
 
     @client = KaChing::ApiClient.new.build_client!(faraday: custom_faraday)
+    VCR.insert_cassette name
+  end
+
+  after do
+    VCR.eject_cassette
   end
 
   describe 'requests to tenants endpoint' do
