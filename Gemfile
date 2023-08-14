@@ -8,7 +8,7 @@ group :development, :test do
   gem 'minitest', '~> 5.19'
   gem 'pry', '~> 0.14.2'
   gem 'rake', '~> 13.0'
-  gem 'rubocop', '~> 1.55'
+  gem 'rubocop', '~> 1.56'
   gem 'rubocop-minitest', '~> 0.31.0'
   gem 'rubocop-performance', '~> 1.18'
   gem 'solargraph', '~> 0.49.0'
