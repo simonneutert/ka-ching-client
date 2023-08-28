@@ -13,6 +13,6 @@ group :development, :test do
   gem 'rubocop-performance', '~> 1.19'
   gem 'solargraph', '~> 0.49.0'
   gem 'vcr', '~> 6.2'
-  gem 'webmock', '~> 3.18'
+  gem 'webmock', '~> 3.19'
   gem 'yard', '~> 0.9.34'
 end
