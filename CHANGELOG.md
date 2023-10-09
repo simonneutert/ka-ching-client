@@ -5,9 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [next release] - unreleased
+## [0.4.2] - 2023-10-09
 
-- [#<PRNUMBER>](https://github.com/simonneutert/ka-ching-client/pull/<PRNUMBER>) add PR description - [@<username>](https://github.com/<username>).
+- [#41](https://github.com/simonneutert/ka-ching-client/pull/41) Update httpx requirement from >= 0.22.4, < 0.25.0 to >= 0.22.4, < 1.1.0.
+- [#40](https://github.com/simonneutert/ka-ching-client/pull/40) Bump rubocop from 1.56.3 to 1.56.4.
+- [#39](https://github.com/simonneutert/ka-ching-client/pull/39) Bump httpx from 0.24.5 to 0.24.6.
+- [#38](https://github.com/simonneutert/ka-ching-client/pull/38) Bump rubocop-minitest from 0.32.1 to 0.32.2.
+- [#37](https://github.com/simonneutert/ka-ching-client/pull/37) Bump rubocop-minitest from 0.31.1 to 0.32.1.
+- [#36](https://github.com/simonneutert/ka-ching-client/pull/36) Bump rubocop-performance from 1.19.0 to 1.19.1.
+- [#35](https://github.com/simonneutert/ka-ching-client/pull/35) Bump httpx from 0.24.4 to 0.24.5.
 
 ## [0.4.1] - 2023-09-16
 
