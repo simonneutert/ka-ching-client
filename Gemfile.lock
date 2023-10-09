@@ -3,7 +3,7 @@ PATH
   specs:
     ka-ching-client (0.4.2)
       faraday (~> 2.7.10)
-      httpx (>= 0.22.4, < 0.25.0)
+      httpx (>= 0.22.4, < 1.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -25,9 +25,9 @@ GEM
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.2)
     hashdiff (1.0.1)
-    http-2-next (0.5.1)
-    httpx (0.24.6)
-      http-2-next (>= 0.4.1)
+    http-2-next (1.0.0)
+    httpx (1.0.1)
+      http-2-next (>= 1.0.0)
     jaro_winkler (1.5.6)
     json (2.6.3)
     kramdown (2.4.0)
