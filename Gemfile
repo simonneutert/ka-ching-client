@@ -9,7 +9,7 @@ group :development, :test do
   gem 'pry', '~> 0.14.2'
   gem 'rake', '~> 13.0'
   gem 'rubocop', '~> 1.57'
-  gem 'rubocop-minitest', '~> 0.32.2'
+  gem 'rubocop-minitest', '~> 0.33.0'
   gem 'rubocop-performance', '~> 1.19'
   gem 'solargraph', '~> 0.49.0'
   gem 'vcr', '~> 6.2'
