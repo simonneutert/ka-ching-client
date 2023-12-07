@@ -11,7 +11,7 @@ group :development, :test do
   gem 'rubocop', '~> 1.58'
   gem 'rubocop-minitest', '~> 0.33.0'
   gem 'rubocop-performance', '~> 1.19'
-  gem 'solargraph', '~> 0.49.0'
+  gem 'solargraph', '~> 0.50.0'
   gem 'vcr', '~> 6.2'
   gem 'webmock', '~> 3.19'
   gem 'yard', '~> 0.9.34'
