@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [next release] - unreleased
 
+- [#62](https://github.com/simonneutert/ka-ching-client/pull/62) Drops support for Ruby v2.7 - [@simonneutert](https://github.com/simonneutert).
 - [#<PRNUMBER>](https://github.com/simonneutert/ka-ching-client/pull/<PRNUMBER>) add PR description - [@<username>](https://github.com/<username>).
 
 ## [0.4.3] - 2023-12-21
