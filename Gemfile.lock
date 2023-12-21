@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ka-ching-client (0.4.3)
+    ka-ching-client (0.4.4)
       faraday (>= 2.7.10, < 2.9.0)
       httpx (>= 0.22.4, < 1.3.0)
 
