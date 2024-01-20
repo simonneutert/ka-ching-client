@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [next release] - unreleased
 
 - [#<PRNUMBER>](https://github.com/simonneutert/ka-ching-client/pull/<PRNUMBER>) add PR description - [@<username>](https://github.com/<username>).
+- [#65](https://github.com/simonneutert/ka-ching-client/pull/65) Adds deprecation warning in code for Ruby v2.7 - [@simonneutert](https://github.com/simonneutert).
 
 ## [0.4.3] - 2023-12-21
 
