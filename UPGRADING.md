@@ -1,5 +1,9 @@
 # Upgrading ka-ching-client
 
+## from 0.6.0
+
+Ruby 3.0 is the minimum supported version.
+
 ## 0.5.0 Deprecation Warning!
 
 Ruby v2.7 will be removed any time soon!
