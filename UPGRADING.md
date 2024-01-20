@@ -1,5 +1,9 @@
 # Upgrading ka-ching-client
 
+## 0.5.0 Deprecation Warning!
+
+Ruby v2.7 will be removed any time soon!
+
 ## 0.4.3 Deprecation Warning!
 
 Ruby v2.7 will be deprecated from v0.5.0 on.  
