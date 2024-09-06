@@ -22,15 +22,17 @@ describe 'KaChing::ApiV1::Tenants', :vcr do
       res = @client.v1.admin.create!(tenant_account_id: 'testuser_123') do |response|
         http = response
       end
+
       assert_equal 200, http.status
-      assert res.is_a?(Hash)
+      assert_kind_of Hash, res
 
       http = nil
       res = @client.v1.admin.reset!(tenant_account_id: 'testuser_123') do |response|
         http = response
       end
+
       assert_equal 200, http.status
-      assert res.is_a?(Hash)
+      assert_kind_of Hash, res
       assert_equal %w[api db health].sort, res.keys.sort
       assert_equal 'success', res['health']
       assert_equal 'V1', res['api']
@@ -43,27 +45,31 @@ describe 'KaChing::ApiV1::Tenants', :vcr do
       res = @client.v1.admin.create!(tenant_account_id: 'testuser_123') do |response|
         http = response
       end
+
       assert_equal 200, http.status
-      assert res.is_a?(Hash)
+      assert_kind_of Hash, res
 
       http = nil
       res = @client.v1.admin.create!(tenant_account_id: 'testuser_124') do |response|
         http = response
       end
+
       assert_equal 200, http.status
-      assert res.is_a?(Hash)
+      assert_kind_of Hash, res
 
       http = nil
       res = @client.v1.admin.create!(tenant_account_id: 'testuser_125') do |response|
         http = response
       end
+
       assert_equal 200, http.status
-      assert res.is_a?(Hash)
+      assert_kind_of Hash, res
 
       http = nil
       res = @client.v1.tenants.all(page: 1) do |response|
         http = response
       end
+
       assert_equal 200, http.status
 
       assert_equal %w[current_page
@@ -79,7 +85,7 @@ describe 'KaChing::ApiV1::Tenants', :vcr do
                       pagination_record_count
                       prev_page], res.keys.sort
 
-      assert res['items'].is_a?(Array)
+      assert_kind_of Array, res['items']
       assert_equal %w[active
                       context
                       created_at

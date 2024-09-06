@@ -30,8 +30,9 @@ describe 'KaChing::ApiV1::Bookings', :vcr do
       ) do |response|
         http = response
       end
+
       assert_equal 200, http.status
-      assert res.is_a?(Hash)
+      assert_kind_of Hash, res
     end
 
     it 'get unlocked' do
@@ -39,11 +40,12 @@ describe 'KaChing::ApiV1::Bookings', :vcr do
       res = @client.v1.bookings.unlocked(tenant_account_id: 'testuser_1') do |response|
         http = response
       end
+
       assert_equal 200, http.status
-      assert res.is_a?(Hash)
-      assert res['bookings'].is_a?(Array)
-      assert res['bookings'].first.is_a?(Hash)
-      assert res['bookings'].first['context'].is_a?(Hash)
+      assert_kind_of Hash, res
+      assert_kind_of Array, res['bookings']
+      assert_kind_of Hash, res['bookings'].first
+      assert_kind_of Hash, res['bookings'].first['context']
     end
 
     it 'creates a withdrawal' do
@@ -57,7 +59,7 @@ describe 'KaChing::ApiV1::Bookings', :vcr do
       end
 
       assert_equal 200, http.status
-      assert res.is_a?(Hash)
+      assert_kind_of Hash, res
     end
 
     it 'deletes a booking' do
@@ -74,7 +76,7 @@ describe 'KaChing::ApiV1::Bookings', :vcr do
       end
 
       assert_equal 200, http.status
-      assert res.is_a?(Hash)
+      assert_kind_of Hash, res
     end
   end
 end

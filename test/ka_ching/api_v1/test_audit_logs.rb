@@ -21,15 +21,17 @@ describe 'KaChing::ApiV1::AuditLogs', :vcr do
 
       assert_equal 1, audit_logs.count
       audit_log = audit_logs.first
+
       assert_equal 1, audit_log['id']
       assert_equal 'lockings', audit_log['table_referenced']
 
       environment_snapshot = audit_log['environment_snapshot']
-      assert environment_snapshot.is_a?(Hash)
-      assert environment_snapshot['bookings'].is_a?(Array)
-      assert environment_snapshot['bookings'].first.is_a?(Hash)
-      assert environment_snapshot['context'].is_a?(Hash)
-      assert(
+
+      assert_kind_of Hash, environment_snapshot
+      assert_kind_of Array, environment_snapshot['bookings']
+      assert_kind_of Hash, environment_snapshot['bookings'].first
+      assert_kind_of Hash, environment_snapshot['context']
+      assert_empty(
         (%w[
           action
           amount_cents
@@ -38,14 +40,15 @@ describe 'KaChing::ApiV1::AuditLogs', :vcr do
           id
           realized_at
           updated_at
-        ].sort - environment_snapshot['bookings'].first.keys.sort).empty?
+        ].sort - environment_snapshot['bookings'].first.keys.sort)
       )
 
       log_entry = audit_log['log_entry']
-      assert log_entry.is_a?(Hash)
-      assert log_entry['bookings'].is_a?(Array)
-      assert log_entry['bookings'].first.is_a?(Hash)
-      assert(
+
+      assert_kind_of Hash, log_entry
+      assert_kind_of Array, log_entry['bookings']
+      assert_kind_of Hash, log_entry['bookings'].first
+      assert_empty(
         (%w[
           action
           amount_cents
@@ -55,9 +58,9 @@ describe 'KaChing::ApiV1::AuditLogs', :vcr do
           realized_at
           updated_at
         ].sort - log_entry['bookings'].first.keys.sort
-        ).empty?
+        )
       )
-      assert log_entry['context'].is_a?(Hash)
+      assert_kind_of Hash, log_entry['context']
     end
   end
 end
