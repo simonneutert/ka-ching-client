@@ -18,15 +18,17 @@ describe 'KaChing::ApiV1::Admin' do
       res = @client.v1.admin.create!(tenant_account_id: 'testuser_1') do |response|
         http = response
       end
+
       assert_equal 200, http.status
-      assert res.is_a?(Hash)
+      assert_kind_of Hash, res
 
       http = nil
       res = @client.v1.admin.details(tenant_account_id: 'testuser_1') do |response|
         http = response
       end
+
       assert_equal 200, http.status
-      assert res.is_a?(Hash)
+      assert_kind_of Hash, res
     end
 
     it 'creates and deletes tenant database' do
@@ -34,15 +36,17 @@ describe 'KaChing::ApiV1::Admin' do
       res = @client.v1.admin.create!(tenant_account_id: 'testuser_2') do |response|
         http = response
       end
+
       assert_equal 200, http.status
-      assert res.is_a?(Hash)
+      assert_kind_of Hash, res
 
       http = nil
       res = @client.v1.admin.drop!(tenant_account_id: 'testuser_2') do |response|
         http = response
       end
+
       assert_equal 200, http.status
-      assert res.is_a?(Hash)
+      assert_kind_of Hash, res
     end
   end
 end

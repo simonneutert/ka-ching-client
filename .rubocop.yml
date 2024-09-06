@@ -1,5 +1,10 @@
+require:
+  - rubocop-rake
+  - rubocop-performance
+  - rubocop-minitest
+
 AllCops:
-  TargetRubyVersion: 2.7
+  TargetRubyVersion: 3.0
   NewCops: enable
 
 Naming/FileName:

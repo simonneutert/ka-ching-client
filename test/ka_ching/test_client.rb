@@ -9,7 +9,7 @@ module KaChing
     end
 
     def test_it_does_something_useful
-      assert true
+      assert true # rubocop:disable Minitest/UselessAssertion
     end
   end
 end

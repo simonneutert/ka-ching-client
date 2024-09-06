@@ -25,6 +25,7 @@ describe 'KaChing::ApiV1::Lockings', :vcr do
                                day: 1) do |response|
                                  http_res_lock = response
                                end
+
       assert_equal 200, http_res_lock.status
       res_lock.is_a?(Hash)
 
@@ -35,7 +36,8 @@ describe 'KaChing::ApiV1::Lockings', :vcr do
                       status], res_lock.keys.sort
 
       res_lock_record = res_lock['record']
-      assert res_lock_record.is_a?(Hash)
+
+      assert_kind_of Hash, res_lock_record
       assert_equal %w[active
                       bookings
                       context
@@ -58,6 +60,7 @@ describe 'KaChing::ApiV1::Lockings', :vcr do
                                context: { 'foo' => 'bar' }) do |response|
                                  http_res_lock = response
                                end
+
       assert_equal 200, http_res_lock.status
       res_lock.is_a?(Hash)
 
@@ -68,7 +71,8 @@ describe 'KaChing::ApiV1::Lockings', :vcr do
                       status], res_lock.keys.sort
 
       res_lock_record = res_lock['record']
-      assert res_lock_record.is_a?(Hash)
+
+      assert_kind_of Hash, res_lock_record
       assert_equal %w[active
                       bookings
                       context
@@ -85,6 +89,7 @@ describe 'KaChing::ApiV1::Lockings', :vcr do
                           .unlock!(tenant_account_id: 'testuser_1') do |response|
         http_res_unlock = response
       end
+
       assert_equal 200, http_res_unlock.status
       res_unlock.is_a?(Hash)
 
@@ -107,8 +112,10 @@ describe 'KaChing::ApiV1::Lockings', :vcr do
                              per_page: 10) do |response|
         http_res_lock = response
       end
+
       assert_equal 200, http_res_lock.status
       res_lock.is_a?(Hash)
+
       assert_equal(%w[current_page
                       current_page_record_count
                       current_page_record_range
@@ -121,8 +128,8 @@ describe 'KaChing::ApiV1::Lockings', :vcr do
                       page_size
                       pagination_record_count
                       prev_page].sort, res_lock.keys.sort)
-      assert(res_lock['items'].is_a?(Array))
-      assert(res_lock['items'].first.is_a?(Hash))
+      assert_kind_of(Array, res_lock['items'])
+      assert_kind_of(Hash, res_lock['items'].first)
     end
     it 'loads active lockings' do
       http_res_lock = nil
@@ -134,8 +141,10 @@ describe 'KaChing::ApiV1::Lockings', :vcr do
                                 per_page: 10) do |response|
         http_res_lock = response
       end
+
       assert_equal 200, http_res_lock.status
       res_lock.is_a?(Hash)
+
       assert_equal(%w[current_page
                       current_page_record_count
                       current_page_record_range
@@ -148,9 +157,9 @@ describe 'KaChing::ApiV1::Lockings', :vcr do
                       page_size
                       pagination_record_count
                       prev_page].sort, res_lock.keys.sort)
-      assert(res_lock['items'].is_a?(Array))
-      assert(res_lock['items'].first.is_a?(Hash))
-      assert(res_lock['items'].first['context'].is_a?(Hash))
+      assert_kind_of(Array, res_lock['items'])
+      assert_kind_of(Hash, res_lock['items'].first)
+      assert_kind_of(Hash, res_lock['items'].first['context'])
       assert(res_lock['items'].all? { |item| item['active'] == true })
     end
     it 'loads inactive lockings' do
@@ -163,8 +172,10 @@ describe 'KaChing::ApiV1::Lockings', :vcr do
                                   per_page: 10) do |response|
         http_res_lock = response
       end
+
       assert_equal 200, http_res_lock.status
       res_lock.is_a?(Hash)
+
       assert_equal(%w[current_page
                       current_page_record_count
                       current_page_record_range
@@ -177,10 +188,10 @@ describe 'KaChing::ApiV1::Lockings', :vcr do
                       page_size
                       pagination_record_count
                       prev_page].sort, res_lock.keys.sort)
-      assert(res_lock['items'].is_a?(Array))
-      assert(res_lock['items'].first.is_a?(Hash))
-      assert(res_lock['items'].first['bookings'].first['context'].is_a?(Hash))
-      assert(res_lock['items'].first['context'].is_a?(Hash))
+      assert_kind_of(Array, res_lock['items'])
+      assert_kind_of(Hash, res_lock['items'].first)
+      assert_kind_of(Hash, res_lock['items'].first['bookings'].first['context'])
+      assert_kind_of(Hash, res_lock['items'].first['context'])
       assert(res_lock['items'].all? { |item| item['active'] == false })
     end
   end
