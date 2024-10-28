@@ -9,6 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [#<PRNUMBER>](https://github.com/simonneutert/ka-ching-client/pull/<PRNUMBER>) add PR description - [@<username>](https://github.com/<username>).
 
+---
+
+## [0.6.2] - 2024-10-28
+
+- Release to match backend's version bump to v0.6.2.
+- [#71](https://github.com/simonneutert/ka-ching-client/pull/71) Fix security issue in rexml gem - [@simonneutert](https://github.com/simonneutert).
+
 ## [0.6.1] - 2024-09-23
 
 - Release to match backend's version bump to v0.6.1.
