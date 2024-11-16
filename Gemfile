@@ -6,11 +6,11 @@ gemspec
 
 group :development, :test do
   gem 'minitest', '~> 5.20'
-  gem 'pry', '~> 0.14.2'
+  gem 'pry', '~> 0.15.0'
   gem 'rake', '~> 13.1'
   gem 'rubocop', '~> 1.68', require: false
   gem 'rubocop-minitest', '~> 0.36.0', require: false
-  gem 'rubocop-performance', '~> 1.20', require: false
+  gem 'rubocop-performance', '~> 1.23', require: false
   gem 'rubocop-rake', '~> 0.6.0', require: false
   gem 'vcr', '~> 6.2'
   gem 'webmock', '~> 3.19'
