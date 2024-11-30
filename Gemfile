@@ -8,7 +8,7 @@ group :development, :test do
   gem 'minitest', '~> 5.25'
   gem 'pry', '~> 0.15.0'
   gem 'rake', '~> 13.1'
-  gem 'rubocop', '~> 1.68', require: false
+  gem 'rubocop', '~> 1.69', require: false
   gem 'rubocop-minitest', '~> 0.36.0', require: false
   gem 'rubocop-performance', '~> 1.23', require: false
   gem 'rubocop-rake', '~> 0.6.0', require: false
