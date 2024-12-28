@@ -6,7 +6,7 @@ gemspec
 
 group :development, :test do
   gem 'minitest', '~> 5.25'
-  gem 'pry', '~> 0.15.0'
+  gem 'pry', '~> 0.15.2'
   gem 'rake', '~> 13.1'
   gem 'rubocop', '~> 1.69', require: false
   gem 'rubocop-minitest', '~> 0.36.0', require: false

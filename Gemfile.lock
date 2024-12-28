@@ -41,10 +41,10 @@ GEM
     parser (3.3.6.0)
       ast (~> 2.4.1)
       racc
-    pry (0.15.0)
+    pry (0.15.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    pry (0.15.0-java)
+    pry (0.15.2-java)
       coderay (~> 1.1)
       method_source (~> 1.0)
       spoon (~> 0.0)
@@ -99,7 +99,7 @@ PLATFORMS
 DEPENDENCIES
   ka-ching-client!
   minitest (~> 5.25)
-  pry (~> 0.15.0)
+  pry (~> 0.15.2)
   rake (~> 13.1)
   rubocop (~> 1.69)
   rubocop-minitest (~> 0.36.0)
