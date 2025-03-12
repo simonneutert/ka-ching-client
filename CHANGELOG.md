@@ -15,6 +15,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [#<PRNUMBER>](https://github.com/simonneutert/ka-ching-client/pull/<PRNUMBER>) add PR description - [@<username>](https://github.com/<username>).
 
+## 0.6.4 - 2024-03-12
+
+- dependency management - @simonneutert.
+
+## 0.6.3 - 2024-03-04
+
+- dependency management - @simonneutert.
+
 ## [0.6.2] - 2024-10-28
 
 - Release to match backend's version bump to v0.6.2.
