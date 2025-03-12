@@ -1,7 +1,9 @@
 require:
   - rubocop-rake
-  - rubocop-performance
   - rubocop-minitest
+
+plugins:
+  - rubocop-performance
 
 AllCops:
   TargetRubyVersion: 3.0

@@ -23,7 +23,7 @@ describe 'KaChing::ApiV1::Saldo', :vcr do
       assert_kind_of Hash, res
 
       assert_equal ['saldo'], res.keys
-      assert 10_000, res['saldo']
+      assert_equal(10_000, res['saldo'])
       assert_kind_of Integer, res['saldo']
     end
   end
