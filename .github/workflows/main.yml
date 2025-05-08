@@ -16,6 +16,7 @@ jobs:
       matrix:
         ruby:
           - "jruby-9.4"
+          - "jruby-10"
           - "3.3"
           - "3.2"
           - "3.1"
