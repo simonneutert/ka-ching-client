@@ -24,7 +24,7 @@ GEM
       logger
     faraday-net_http (3.4.0)
       net-http (>= 0.5.0)
-    ffi (1.17.1-java)
+    ffi (1.17.2-java)
     hashdiff (1.1.2)
     http-2 (1.1.1)
     httpx (1.4.4)
@@ -50,14 +50,14 @@ GEM
       coderay (~> 1.1)
       method_source (~> 1.0)
       spoon (~> 0.0)
-    public_suffix (6.0.1)
+    public_suffix (6.0.2)
     racc (1.8.1)
     racc (1.8.1-java)
     rainbow (3.1.1)
     rake (13.2.1)
     regexp_parser (2.10.0)
     rexml (3.4.1)
-    rubocop (1.75.4)
+    rubocop (1.75.5)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
@@ -117,4 +117,4 @@ DEPENDENCIES
   yard (~> 0.9.34)
 
 BUNDLED WITH
-   2.5.23
+   2.6.7
