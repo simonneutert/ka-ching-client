@@ -11,9 +11,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [next release] - unreleased
+## [0.7.0] - 2025-09-10
 
-- [#<PRNUMBER>](https://github.com/simonneutert/ka-ching-client/pull/<PRNUMBER>) add PR description - [@<username>](https://github.com/<username>).
+- [#95](https://github.com/simonneutert/ka-ching-client/pull/95) add PR description - [@simonneutert](https://github.com/simonneutert).
 
 ## 0.6.4 - 2024-03-12
 
