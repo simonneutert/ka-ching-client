@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.7.1] - 2025-10-04
+
+- Version bump to match backend's version bump to v0.7.1.
+
 ## [0.7.0] - 2025-09-10
 
 - [#95](https://github.com/simonneutert/ka-ching-client/pull/95) add PR description - [@simonneutert](https://github.com/simonneutert).
