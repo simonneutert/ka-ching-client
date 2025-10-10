@@ -15,6 +15,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 insert changes here
 
+## [0.7.3] - 2025-10-10
+
+- fix rack version
+
+## [0.7.2] - 2025-10-09
+
+- fix rack version
+
 ## [0.7.1] - 2025-10-04
 
 - Version bump to match backend's version bump to v0.7.1.
