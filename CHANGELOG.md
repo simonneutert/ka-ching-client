@@ -15,6 +15,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 insert changes here
 
+## [0.7.4] - 2026-02-20
+
+- [#103](https://github.com/simonneutert/ka-ching-client/pull/103) dependency management - [@simonneutert](https://github.com/simonneutert).
+- [#101](https://github.com/simonneutert/ka-ching-client/pull/101) dependency management - [@simonneutert](https://github.com/simonneutert).
+- [#98](https://github.com/simonneutert/ka-ching-client/pull/98) dependency management - [@simonneutert](https://github.com/simonneutert).
+
 ## [0.7.3] - 2025-10-10
 
 - fix rack version
