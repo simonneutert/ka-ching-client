@@ -3,7 +3,7 @@ PATH
   specs:
     ka-ching-client (0.7.5)
       faraday (>= 2.7.10, < 2.15.0)
-      httpx (>= 1.0.0, < 1.7.0)
+      httpx (>= 1.0.0, < 1.8.0)
 
 GEM
   remote: https://rubygems.org/
@@ -26,8 +26,10 @@ GEM
     ffi (1.17.3-java)
     hashdiff (1.2.1)
     http-2 (1.1.2)
-    httpx (1.6.3)
+    httpx (1.7.2)
       http-2 (>= 1.0.0)
+    io-console (0.8.2)
+    io-console (0.8.2-java)
     json (2.18.1)
     json (2.18.1-java)
     language_server-protocol (3.17.0.5)
@@ -42,12 +44,14 @@ GEM
       ast (~> 2.4.1)
       racc
     prism (1.9.0)
-    pry (0.15.2)
+    pry (0.16.0)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    pry (0.15.2-java)
+      reline (>= 0.6.0)
+    pry (0.16.0-java)
       coderay (~> 1.1)
       method_source (~> 1.0)
+      reline (>= 0.6.0)
       spoon (~> 0.0)
     public_suffix (7.0.2)
     racc (1.8.1)
@@ -55,6 +59,8 @@ GEM
     rainbow (3.1.1)
     rake (13.3.1)
     regexp_parser (2.11.3)
+    reline (0.6.3)
+      io-console (~> 0.5)
     rexml (3.4.4)
     rubocop (1.84.2)
       json (~> 2.3)
@@ -104,7 +110,7 @@ PLATFORMS
 DEPENDENCIES
   ka-ching-client!
   minitest (~> 5.25)
-  pry (~> 0.15.2)
+  pry (~> 0.16.0)
   rake (~> 13.3)
   rubocop (~> 1.81)
   rubocop-minitest (~> 0.38.2)
