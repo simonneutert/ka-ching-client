@@ -31,7 +31,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency 'faraday', '>= 2.7.10', '< 2.15.0'
-  spec.add_dependency 'httpx', '>= 1.0.0', '< 1.7.0'
+  spec.add_dependency 'httpx', '>= 1.0.0', '< 1.8.0'
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
