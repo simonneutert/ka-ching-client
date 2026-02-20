@@ -17,6 +17,9 @@ insert changes here
 
 ## [0.7.4] - 2026-02-20
 
+- Minimal Ruby version bumped to 3.2.0 to support the newest bundler versions.
+- Minimal JRuby version bumped to 10.0.0 to support the newest bundler versions.
+
 - [#103](https://github.com/simonneutert/ka-ching-client/pull/103) dependency management - [@simonneutert](https://github.com/simonneutert).
 - [#101](https://github.com/simonneutert/ka-ching-client/pull/101) dependency management - [@simonneutert](https://github.com/simonneutert).
 - [#98](https://github.com/simonneutert/ka-ching-client/pull/98) dependency management - [@simonneutert](https://github.com/simonneutert).
