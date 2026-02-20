@@ -32,7 +32,7 @@ describe 'KaChing::ApiV1::AuditLogs', :vcr do
       assert_kind_of Hash, environment_snapshot['bookings'].first
       assert_kind_of Hash, environment_snapshot['context']
       assert_empty(
-        (%w[
+        %w[
           action
           amount_cents
           context
@@ -40,7 +40,7 @@ describe 'KaChing::ApiV1::AuditLogs', :vcr do
           id
           realized_at
           updated_at
-        ].sort - environment_snapshot['bookings'].first.keys.sort)
+        ].sort - environment_snapshot['bookings'].first.keys.sort
       )
 
       log_entry = audit_log['log_entry']
@@ -49,7 +49,7 @@ describe 'KaChing::ApiV1::AuditLogs', :vcr do
       assert_kind_of Array, log_entry['bookings']
       assert_kind_of Hash, log_entry['bookings'].first
       assert_empty(
-        (%w[
+        %w[
           action
           amount_cents
           context
@@ -58,7 +58,6 @@ describe 'KaChing::ApiV1::AuditLogs', :vcr do
           realized_at
           updated_at
         ].sort - log_entry['bookings'].first.keys.sort
-        )
       )
       assert_kind_of Hash, log_entry['context']
     end

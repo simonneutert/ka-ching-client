@@ -23,7 +23,7 @@ describe 'KaChing::ApiV1::Lockings', :vcr do
                                year: 2000,
                                month: 1,
                                day: 1) do |response|
-                                 http_res_lock = response
+                          http_res_lock = response
                                end
 
       assert_equal 200, http_res_lock.status
@@ -58,7 +58,7 @@ describe 'KaChing::ApiV1::Lockings', :vcr do
                                month: 1,
                                day: 31,
                                context: { 'foo' => 'bar' }) do |response|
-                                 http_res_lock = response
+                          http_res_lock = response
                                end
 
       assert_equal 200, http_res_lock.status
@@ -87,7 +87,7 @@ describe 'KaChing::ApiV1::Lockings', :vcr do
       res_unlock = @client.v1
                           .lockings
                           .unlock!(tenant_account_id: 'testuser_1') do |response|
-        http_res_unlock = response
+                            http_res_unlock = response
       end
 
       assert_equal 200, http_res_unlock.status
@@ -110,7 +110,7 @@ describe 'KaChing::ApiV1::Lockings', :vcr do
                         .all(tenant_account_id: 'testuser_1',
                              page: 1,
                              per_page: 10) do |response|
-        http_res_lock = response
+                          http_res_lock = response
       end
 
       assert_equal 200, http_res_lock.status
@@ -139,7 +139,7 @@ describe 'KaChing::ApiV1::Lockings', :vcr do
                                 year: 2000,
                                 page: 1,
                                 per_page: 10) do |response|
-        http_res_lock = response
+                          http_res_lock = response
       end
 
       assert_equal 200, http_res_lock.status
@@ -170,7 +170,7 @@ describe 'KaChing::ApiV1::Lockings', :vcr do
                                   year: 2000,
                                   page: 1,
                                   per_page: 10) do |response|
-        http_res_lock = response
+                          http_res_lock = response
       end
 
       assert_equal 200, http_res_lock.status
