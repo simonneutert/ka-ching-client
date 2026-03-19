@@ -15,6 +15,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 insert changes here
 
+## 0.7.5 - 2026-03-19
+
+- dependency upgrades - @simonneutert
+
 ## [0.7.4] - 2026-02-20
 
 - Minimal Ruby version bumped to 3.2.0 to support the newest bundler versions.
