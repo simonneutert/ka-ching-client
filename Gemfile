@@ -14,5 +14,5 @@ group :development, :test do
   gem 'rubocop-rake', '~> 0.7.1', require: false
   gem 'vcr', '~> 6.2'
   gem 'webmock', '~> 3.26'
-  gem 'yard', '~> 0.9.34'
+  gem 'yard', '~> 0.9.42'
 end
