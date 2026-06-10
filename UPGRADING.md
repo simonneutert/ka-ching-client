@@ -1,5 +1,9 @@
 # Upgrading ka-ching-client
 
+## from 0.8.0
+
+Ruby 3.3 is the minimum supported version.
+
 ## from 0.6.0
 
 Ruby 3.0 is the minimum supported version.

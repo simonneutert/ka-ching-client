@@ -13,7 +13,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [next release] - unreleased
 
-insert changes here
+## 0.7.7 2026-06-10
+
+- dependency upgrades - @simonneutert
+- minimum Ruby version v3.3.0
+
+## 0.7.6 2026-04-02
+
+- dependency upgrades - @simonneutert
 
 ## 0.7.5 - 2026-03-19
 
